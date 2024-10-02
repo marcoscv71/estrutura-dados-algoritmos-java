@@ -1,6 +1,7 @@
 package com.marcos.estruturadados.vetor;
 
 public class VetorObjetos {
+
     private Object[] elementos;
     private int tamanho;
 
