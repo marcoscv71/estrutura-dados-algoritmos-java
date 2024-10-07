@@ -57,13 +57,6 @@ public class Lista<T> {
         }
     }
 
-    public Object busca(int posicao) {
-        if(!(posicao >= 0 && posicao < tamanho)) {
-            throw new IllegalArgumentException("Posição inválida");
-        }
-        return this.elementos[posicao];
-    }
-
     public int busca(T elemento) {
         for(int i = 0; i < this.tamanho; i++) {
             if(this.elementos[i].equals(elemento)) {
@@ -71,6 +64,13 @@ public class Lista<T> {
             }
         }
         return -1;
+    }
+
+    public void remove(T elemento) {
+        int posicao = this.busca(elemento);
+        if (posicao > -1) {
+            this.remove(posicao);
+        }
     }
 
     public void remove(int posicao) {
@@ -87,6 +87,36 @@ public class Lista<T> {
 
     public int tamanho() {
         return this.tamanho;
+    }
+
+    public boolean contem(T elemento) {
+        return busca(elemento) > -1;
+    }
+
+    public T obtem(int posicao) {
+        if(!(posicao >= 0 && posicao < tamanho)) {
+            throw new IllegalArgumentException("Posição inválida");
+        }
+        return this.elementos[posicao];
+    }
+
+    public int ultimoIndice(T elemento) {
+
+        for(int i = tamanho-1; i >= 0; i--) {
+            if(this.elementos[i].equals(elemento)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void limpar() {
+        // this.tamanho = 0;
+        // this.elementos = (T[]) new Object[this.elementos.length];
+        for(int i = 0; i < this.tamanho; i++) {
+            this.elementos[i] = null;
+        }
+        this.tamanho = 0;
     }
 
     @Override

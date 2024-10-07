@@ -1,7 +1,7 @@
 package com.marcos.estruturadados.vetor;
 
 // Um vetor (ou array) eh uma estrutura de dados simples, que
-// armazena uma sequencia de valores onde todos sao do mesmo tipo.
+// armazena uma sequência de valores onde todos sao do mesmo tipo.
 
 public class Vetor {
 
