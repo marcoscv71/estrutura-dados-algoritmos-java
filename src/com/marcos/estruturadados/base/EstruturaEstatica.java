@@ -1,8 +1,8 @@
 package com.marcos.estruturadados.base;
 
 public class EstruturaEstatica<T> {
-    private T[] elementos;
-    private int tamanho;
+    protected T[] elementos;
+    protected int tamanho;
 
 
 
